@@ -58,6 +58,7 @@ public class FightState extends InWorldState{
     private BaseHostileEntity inStateEnemy;
 	private long eWait = 0;
 
+	public static boolean unlockedSkill = false;
 
     public FightState(Handler handler ,BaseHostileEntity enemy, String prevState) {
         super(handler);
@@ -223,6 +224,12 @@ public class FightState extends InWorldState{
                      g2.setFont(new Font("IMPACT", 3, this.wordHeight/3));
                      g.drawString( handler.getEntityManager().getPlayer().getLvl() + "  -> " + (handler.getEntityManager().getPlayer().getLvl()+1),handler.getWidth()/3 + 150,handler.getHeight()/2 + 230);
                 }
+                
+                if(enemy.name.contentEquals("Jovan")) {//+++++++++++++++++++++++++++++++++++++++++++++++++a
+                	
+                	unlockedSkill = true;
+                }
+                
                 enemy.kill();
                 inStateEnemy.kill();
             }
@@ -498,7 +505,7 @@ public class FightState extends InWorldState{
         uiManager.addObjects(new UIImageButton(handler.getWidth() * 38/60 - 128/2, 5*handler.getHeight()/6, 128, 64, Images.Skill, new ClickListlener() {
             @Override
             public void onClick() {
-                if(handler.getEntityManager().getPlayer().getMana()>=25) {
+                if(handler.getEntityManager().getPlayer().getMana()>=25 && unlockedSkill) {
                     System.out.println("Skill");
                     skill = true;
                 }

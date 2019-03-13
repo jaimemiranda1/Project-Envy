@@ -8,6 +8,7 @@ import Resources.Images;
 import Resources.MusicHandler;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
@@ -141,6 +142,16 @@ public class GameSetUp implements Runnable {
     private void tick(){
         //checks for key types and manages them
         keyManager.tick();
+        
+        if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_F7) && DEBUGMODE ==false) {//++++++++++++++++++++++++++++++++++++++++
+        	DEBUGMODE = !DEBUGMODE;
+        }
+       
+        if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_H)) {
+        	
+        	handler.getEntityManager().getPlayer().setHealth(handler.getEntityManager().getPlayer().getMaxHealth());
+        	handler.getEntityManager().getPlayer().setMana(handler.getEntityManager().getPlayer().getMaxMana());
+        }
 
         //game states are the menus
         if(State.getState() != null) {

@@ -1,6 +1,7 @@
 package Game.Entities.Dynamics;
 
 import java.awt.Graphics;
+
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
@@ -9,6 +10,7 @@ import Game.GameStates.State;
 import Game.World.Walls;
 import Game.World.InWorldAreas.CaveArea;
 import Game.World.InWorldAreas.InWorldWalls;
+import Input.KeyManager;
 import Main.GameSetUp;
 import Main.Handler;
 import Resources.Animation;
@@ -16,6 +18,7 @@ import Resources.Images;
 
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+
 
 public class Player extends BaseDynamicEntity implements Fighter {
 
@@ -591,5 +594,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 		}
 		
 	}
+	
+	
 
 }
