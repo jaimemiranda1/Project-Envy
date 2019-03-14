@@ -92,7 +92,8 @@ public class Images {
 	public static Image ScaledCave;
 	public static Image ScaledArea;
 	public static BufferedImage tree;
-
+	public static BufferedImage caveBlocker;
+	
 	public Images() {
 
 		butstart = new BufferedImage[3];
@@ -159,6 +160,7 @@ public class Images {
 
 			CaveMap = ImageIO.read(getClass().getResourceAsStream("/Worlds/CaveMap.png"));
 			tree = ImageIO.read(getClass().getResourceAsStream("/Sheets/Tree.png"));
+			caveBlocker = ImageIO.read(getClass().getResourceAsStream("/Worlds/underConstruction.jpg"));//+++++++++++++++++++++++++++++++++++++++
 			title = ImageIO.read(getClass().getResourceAsStream("/Sheets/menuImage.png"));
 			title2 = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
 			title3 = ImageIO.read(getClass().getResourceAsStream("/Sheets/static.jpg"));

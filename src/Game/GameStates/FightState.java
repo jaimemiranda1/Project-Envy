@@ -225,7 +225,7 @@ public class FightState extends InWorldState{
                      g.drawString( handler.getEntityManager().getPlayer().getLvl() + "  -> " + (handler.getEntityManager().getPlayer().getLvl()+1),handler.getWidth()/3 + 150,handler.getHeight()/2 + 230);
                 }
                 
-                if(enemy.name.contentEquals("Jovan")) {//+++++++++++++++++++++++++++++++++++++++++++++++++a
+                if(enemy.name.contentEquals("Jovan")) {//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                 	
                 	unlockedSkill = true;
                 	
@@ -901,7 +901,7 @@ public class FightState extends InWorldState{
     public void setStringSpeed(int stringSpeed) {
         this.stringSpeed = stringSpeed;
     }
-
+    
 
 
 }
