@@ -228,6 +228,8 @@ public class FightState extends InWorldState{
                 if(enemy.name.contentEquals("Jovan")) {//+++++++++++++++++++++++++++++++++++++++++++++++++a
                 	
                 	unlockedSkill = true;
+                	
+                	handler.getEntityManager().getPlayer().setSkill("Freeze");
                 }
                 
                 enemy.kill();
