@@ -12,8 +12,8 @@ public class CaveBlocker extends BaseStaticEntity {
 	
 	public CaveBlocker(Handler handler, int xPosition, int yPosition) {
 		super(handler, xPosition, yPosition);
-		width = 35;
-		height = 35;
+		width = 50;
+		height = 50;
 		
 		this.setXOffset(xPosition);
 		this.setYOffset(yPosition);

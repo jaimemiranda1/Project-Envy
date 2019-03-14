@@ -160,7 +160,7 @@ public class Images {
 
 			CaveMap = ImageIO.read(getClass().getResourceAsStream("/Worlds/CaveMap.png"));
 			tree = ImageIO.read(getClass().getResourceAsStream("/Sheets/Tree.png"));
-			caveBlocker = ImageIO.read(getClass().getResourceAsStream("/Worlds/underConstruction.jpg"));//+++++++++++++++++++++++++++++++++++++++
+			caveBlocker = ImageIO.read(getClass().getResourceAsStream("/Sheets/Knight.png"));//+++++++++++++++++++++++++++++++++++++++
 			title = ImageIO.read(getClass().getResourceAsStream("/Sheets/menuImage.png"));
 			title2 = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
 			title3 = ImageIO.read(getClass().getResourceAsStream("/Sheets/static.jpg"));
