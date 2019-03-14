@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+import Game.GameStates.FightState;
 import Game.GameStates.InWorldState;
 import Game.GameStates.State;
 import Game.World.Walls;
@@ -202,7 +203,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 					else if (w.getType().startsWith("Door")) {
 						canMove = true;
 
-						if (w.getType().equals("Door Cave")) {
+						if (w.getType().equals("Door Cave") && FightState.unlockedSkill) {//++++++++++++++++++++++++++++++++++
 							checkInWorld = true;
 							InWorldState.caveArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
 							InWorldState.caveArea.oldPlayerYCoord = (int) (handler.getYDisplacement());
@@ -218,6 +219,9 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	                        handler.getGame().getMusicHandler().setVolume(0.4);
 							
 							State.setState(handler.getGame().inWorldState.setArea(InWorldState.caveArea));
+						}
+						else {
+							PushPlayerBack();//+++++++++++++++++++++
 						}
 
 						if (w.getType().equals("Door S")) {
