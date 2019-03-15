@@ -5,6 +5,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+import Game.Entities.BaseEntity;
+import Game.Entities.EntityManager;
+import Game.Entities.Statics.CaveBlocker;
 import Game.GameStates.FightState;
 import Game.GameStates.InWorldState;
 import Game.GameStates.State;
@@ -192,9 +195,14 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	private void CheckForWalls() {
 
 		if (!checkInWorld) {
+			
+			
 			for (Walls w : handler.getWorldManager().getWalls()) {
 
 				if (nextArea.intersects(w)) {
+					if(w.getType().equals("Guard") && !FightState.unlockedSkill) {
+						PushPlayerBack();
+					}
 
 					if (w.getType().equals("Wall")) {
 						PushPlayerBack();

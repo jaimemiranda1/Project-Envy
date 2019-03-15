@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import Game.Entities.Dynamics.BaseHostileEntity;
 import Game.Entities.Dynamics.Player;
 import Game.Entities.Statics.BaseStaticEntity;
+import Game.Entities.Statics.CaveBlocker;
 import Main.GameSetUp;
 import Main.Handler;
 
@@ -15,12 +16,16 @@ public class EntityManager {
 	protected Player player;
 	
 	ArrayList<BaseEntity> entities;
+	static ArrayList<BaseEntity> entitiesCopy;
 	
 	public EntityManager(Handler handler, Player player) {
 		this.handler = handler;
 		this.player = player;
 		
 		entities = new ArrayList<>();
+		entitiesCopy = new ArrayList<>();
+		entitiesCopy = entities;
+		
 	}
 	
 	public void tick() {
@@ -33,7 +38,7 @@ public class EntityManager {
 						e.tick();
 					}
 				}
-			}else {
+			}else if(!(e instanceof BaseHostileEntity) && !(e instanceof CaveBlocker)) {
 				CheckCollisions(e);
 				e.tick();
 			}
@@ -78,14 +83,20 @@ public class EntityManager {
 	
 	public void AddEntity(BaseEntity e) {
 		entities.add(e);
+		entitiesCopy = entities;
 	}
 
 
 	public void RemoveEntity(BaseEntity e) {
 		entities.remove(e);
+		entitiesCopy = entities;
 	}
 
 	public Player getPlayer() {
 		return player;
+	}
+	public static ArrayList<BaseEntity> getEntities(){
+		
+		return  entitiesCopy;
 	}
 }
