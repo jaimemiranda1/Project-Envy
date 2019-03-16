@@ -148,7 +148,11 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 840, 240, 120, 110, "Wall"));
 		worldWalls.add(new Walls(handler, 580, 300, 40, 50, "Wall"));
 		
+		//Cave Blocker
 		worldWalls.add(new Walls(handler, 1655, 90, 55, 50, "Guard"));
+		
+		//Town
+		worldWalls.add(new Walls(handler, 1080, 385, 220, 290, "Town"));
 	}
 
 	public void collidedWithWall() {
