@@ -32,9 +32,9 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	public static boolean checkInWorld;
 
 	public static final int InMapWidthFrontAndBack = 15 * 3, InMapHeightFront = 27 * 3, InMapHeightBack = 23 * 3,
-							InMapWidthSideways = 13 * 3, InMapHeightSideways = 22 * 3, 
-							InAreaWidthFrontAndBack = 15 * 5, InAreaHeightFront = 27 * 5, InAreaHeightBack = 23 * 5,
-							InAreaWidthSideways = 13 * 5, InAreaHeightSideways = 22 * 5;
+			InMapWidthSideways = 13 * 3, InMapHeightSideways = 22 * 3, 
+			InAreaWidthFrontAndBack = 15 * 5, InAreaHeightFront = 27 * 5, InAreaHeightBack = 23 * 5,
+			InAreaWidthSideways = 13 * 5, InAreaHeightSideways = 22 * 5;
 
 	private int currentWidth, currentHeight;
 	public static boolean isinArea = false;
@@ -67,10 +67,10 @@ public class Player extends BaseDynamicEntity implements Fighter {
 
 	@Override
 	public void tick() {
-		
+
 		if (!GameSetUp.LOADING) {
 			levelUP();
-			
+
 			animDown.tick();
 			animUp.tick();
 			animRight.tick();
@@ -196,8 +196,8 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	private void CheckForWalls() {
 
 		if (!checkInWorld) {
-			
-			
+
+
 			for (Walls w : handler.getWorldManager().getWalls()) {
 
 				if (nextArea.intersects(w)) {
@@ -208,7 +208,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 					if (w.getType().equals("Wall")) {
 						PushPlayerBack();
 					}
-					
+
 					if (w.getType().equals("Town")) {//++++++++++++++++++++++++++++++++++
 						checkInWorld = true;
 						InWorldState.townArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
@@ -219,7 +219,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 						handler.setYInWorldDisplacement(TownArea.playerYSpawn);
 						GameSetUp.LOADING = true;
 						handler.setArea("Town");
-						
+
 						State.setState(handler.getGame().inWorldState.setArea(InWorldState.townArea));
 					}
 
@@ -236,11 +236,11 @@ public class Player extends BaseDynamicEntity implements Fighter {
 							handler.setYInWorldDisplacement(CaveArea.playerYSpawn);
 							GameSetUp.LOADING = true;
 							handler.setArea("Cave");
-							
-	                        handler.getGame().getMusicHandler().set_changeMusic("res/music/Cave.mp3");
-	                        handler.getGame().getMusicHandler().play();
-	                        handler.getGame().getMusicHandler().setVolume(0.4);
-							
+
+							handler.getGame().getMusicHandler().set_changeMusic("res/music/Cave.mp3");
+							handler.getGame().getMusicHandler().play();
+							handler.getGame().getMusicHandler().setVolume(0.4);
+
 							State.setState(handler.getGame().inWorldState.setArea(InWorldState.caveArea));
 						}
 						else {
@@ -274,7 +274,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 							if (iw.getType().equals("Start Exit")) {
 
 								handler.setXDisplacement(handler.getXDisplacement() - 450); // Sets the player x/y
-																							// outside the
+								// outside the
 								handler.setYDisplacement(handler.getYDisplacement() + 400); // Cave
 
 							} else if (iw.getType().equals("End Exit")) {
@@ -282,14 +282,14 @@ public class Player extends BaseDynamicEntity implements Fighter {
 								handler.setXDisplacement(InWorldState.caveArea.oldPlayerXCoord);// Sets the player x/y
 								handler.setYDisplacement(InWorldState.caveArea.oldPlayerYCoord);// outside theCave
 							}
-	
+
 							GameSetUp.LOADING = true;
 							handler.setArea("None");
-							
-	                    	handler.getGame().getMusicHandler().set_changeMusic("res/music/OverWorld.mp3");
-	                        handler.getGame().getMusicHandler().play();
-	                        handler.getGame().getMusicHandler().setVolume(0.2);
-							
+
+							handler.getGame().getMusicHandler().set_changeMusic("res/music/OverWorld.mp3");
+							handler.getGame().getMusicHandler().play();
+							handler.getGame().getMusicHandler().setVolume(0.2);
+
 							State.setState(handler.getGame().mapState);
 							CaveArea.isInCave = false;
 							checkInWorld = false;
@@ -308,6 +308,23 @@ public class Player extends BaseDynamicEntity implements Fighter {
 						if (iw.getType().equals("Wall"))
 							PushPlayerBack();
 
+					}
+				}
+			}
+
+			else if (TownArea.isInTown) {
+
+				for (InWorldWalls iw : InWorldState.townArea.getWalls()) {
+
+					if (nextArea.intersects(iw)) {
+						if (iw.getType().equals("Wall"))
+							PushPlayerBack();
+						else if
+
+						(iw.getType().equals("Exit")) 
+
+							handler.setXDisplacement(handler.getXDisplacement() - 450); // Sets the player x/y
+							handler.setYDisplacement(handler.getYDisplacement() + 400); // Outside the town
 					}
 				}
 			}
@@ -492,12 +509,12 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	public void setIntl(double intl) {
 		this.intl = intl;
 	}
-	
+
 	@Override
 	public double getMr() {
 		return mr;
 	}
-	
+
 	@Override
 	public void setMr(double mr) {
 		this.mr = mr;	
@@ -587,19 +604,19 @@ public class Player extends BaseDynamicEntity implements Fighter {
 	}
 
 	public boolean getWeaken() {
-		
+
 		return this.weakenS;
-		
+
 	}
-	
+
 	public void addXp(double xp) {
 		this.xp += xp;
 	}
-	
+
 	public double getLvlUpXp() {
 		return lvlUpExp;
 	}
-	
+
 	private void levelUP() {
 		if(xp >= lvlUpExp) {
 			xp-= lvlUpExp;
@@ -614,14 +631,14 @@ public class Player extends BaseDynamicEntity implements Fighter {
 			cons += 1 + 1 *(int)((lvl - 1)/2);
 			if(lvl%4 ==0)
 				evs++;
-			
+
 			lvl++;
-			
-			
+
+
 		}
-		
+
 	}
-	
-	
+
+
 
 }

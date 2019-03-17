@@ -97,6 +97,7 @@ public class TownArea extends BaseArea {
     	townWalls.add(new InWorldWalls(handler, 491, 1213, 193, 53, "Wall"));		//Bench in park
     	townWalls.add(new InWorldWalls(handler, 1115, 1131, 57, 59, "Wall"));		//Pole near park
     	townWalls.add(new InWorldWalls(handler, 807, 1687, 377, 285, "Wall"));		//Trees near park on the bottom
+    	townWalls.add(new InWorldWalls(handler, 3609, 845, 73, 171, "Exit"));		//Exit the cave, topish right corner
     	
     }
 
