@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 import Game.Entities.Dynamics.Player;
+import Game.World.InWorldAreas.TownArea;
 import Main.Handler;
 import Resources.Animation;
 import Resources.Images;
@@ -35,7 +36,7 @@ public class LightStatue extends BaseStaticEntity {
 
 	@Override
 	public void render(Graphics g) {
-		if(!Player.isinArea)
+		if(!Player.isinArea && !TownArea.isInTown)
 			g.drawImage(light.getCurrentFrame(), (int)(handler.getXInWorldDisplacement() + xPosition),(int)( handler.getYInWorldDisplacement() + yPosition), width, height, null);
 	}
 
