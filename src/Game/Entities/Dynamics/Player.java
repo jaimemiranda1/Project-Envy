@@ -314,22 +314,34 @@ public class Player extends BaseDynamicEntity implements Fighter {
 
 			else if (TownArea.isInTown) {
 
-				for (InWorldWalls iw : InWorldState.townArea.getWalls()) {
+				for (InWorldWalls iw : TownArea.townWalls) {
 
 					if (nextArea.intersects(iw)) {
 						if (iw.getType().equals("Wall"))
 							PushPlayerBack();
-						else if
+						else {
 
-						(iw.getType().equals("Exit")) 
+							if(iw.getType().equals("Exit")) {
 
-							handler.setXDisplacement(handler.getXDisplacement() - 450); // Sets the player x/y
-							handler.setYDisplacement(handler.getYDisplacement() + 400); // Outside the town
+								handler.setXDisplacement(handler.getXDisplacement() - 200); // Sets the player x/y
+								handler.setYDisplacement(handler.getYDisplacement() + 130); // Outside the town
+							}
+
+							GameSetUp.LOADING = true;
+							handler.setArea("None");
+
+							State.setState(handler.getGame().mapState);
+							TownArea.isInTown = false;
+							checkInWorld = false;
+							System.out.println("Left Town");
+							setWidthAndHeight(InMapWidthFrontAndBack, InMapHeightFront);
+						}
 					}
 				}
 			}
 		}
 	}
+
 
 	/**
 	 *
