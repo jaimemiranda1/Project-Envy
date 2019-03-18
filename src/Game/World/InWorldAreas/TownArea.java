@@ -82,22 +82,44 @@ public class TownArea extends BaseArea {
 
     private void AddWalls() {
 
-    	townWalls.add(new InWorldWalls(handler, 1601, 1099, 1188, 664, "Wall"));	//House with pond
-    	townWalls.add(new InWorldWalls(handler, 2947, 1099, 540, 662, "Wall"));		//House in bottom right corner
-    	townWalls.add(new InWorldWalls(handler, 0, 1939, 3682, 165, "Wall"));		//Bottom Corner
-    	townWalls.add(new InWorldWalls(handler, 3393, 1713, 289, 239, "Wall"));		//Right Corner
-    	townWalls.add(new InWorldWalls(handler, 3487, 1001, 195, 807, "Wall"));		//
-    	townWalls.add(new InWorldWalls(handler, 3487, 0, 195, 846, "Wall"));		//
-    	townWalls.add(new InWorldWalls(handler, 2111, 0, 1383, 752, "Wall"));		//House in top right corner
-    	townWalls.add(new InWorldWalls(handler, 0, 0, 1917, 922, "Wall"));			//House in top left
-    	townWalls.add(new InWorldWalls(handler, 0, 917, 254, 1187, "Wall"));		//Left Corner
-    	townWalls.add(new InWorldWalls(handler, 245, 1093, 249, 211, "Wall"));		//
-    	townWalls.add(new InWorldWalls(handler, 253, 1229, 119, 169, "Wall"));		//
-    	townWalls.add(new InWorldWalls(handler, 1917, 0, 197, 84, "Wall"));			//Bench on top
-    	townWalls.add(new InWorldWalls(handler, 491, 1213, 193, 53, "Wall"));		//Bench in park
-    	townWalls.add(new InWorldWalls(handler, 1115, 1131, 57, 59, "Wall"));		//Pole near park
-    	townWalls.add(new InWorldWalls(handler, 807, 1687, 377, 285, "Wall"));		//Trees near park on the bottom
-    	townWalls.add(new InWorldWalls(handler, 3609, 845, 73, 171, "Exit"));		//Exit the cave, topish right corner
+    	townWalls.add(new InWorldWalls(handler, 0, 0, 1863, 451, "Wall"));		//Top left trees
+    	townWalls.add(new InWorldWalls(handler, 1015, 443, 671, 261, "Wall")); 	//House in top left
+    	townWalls.add(new InWorldWalls(handler, 527, 479, 49, 411, "Wall"));	//Left fence of top house
+    	townWalls.add(new InWorldWalls(handler, 563, 481, 473, 189, "Wall"));	//Top fence and trees of top house
+    	townWalls.add(new InWorldWalls(handler, 537, 811, 563, 87, "Wall"));	//Bottom fence of top house
+    	townWalls.add(new InWorldWalls(handler, 1287, 849, 31, 35, "Wall"));	//Mailbox of top house
+    	townWalls.add(new InWorldWalls(handler, 1527, 789, 123, 89, "Wall"));	//Sign of top house
+    	townWalls.add(new InWorldWalls(handler, 1831, 793, 53, 65, "Wall"));	//Pole in top house
+    	townWalls.add(new InWorldWalls(handler, 0, 375, 90, 237, "Wall"));		//Left Trees near top house
+    	townWalls.add(new InWorldWalls(handler, 0, 563, 418, 353, "Wall"));		//
+    	townWalls.add(new InWorldWalls(handler, 1679, 439, 193, 45, "Wall"));	//Bush in the right of top house
+    	townWalls.add(new InWorldWalls(handler, 0, 767, 201, 1337, "Wall"));	//Left trees
+    	townWalls.add(new InWorldWalls(handler, 201, 1083, 331, 185, "Wall"));	//Top trees near park
+    	townWalls.add(new InWorldWalls(handler, 169, 1259, 197, 141, "Wall"));	//Trees next to bench on park
+    	townWalls.add(new InWorldWalls(handler, 191, 1937, 365, 167, "Wall"));	//Trees in the bottom of park
+    	townWalls.add(new InWorldWalls(handler, 497, 1995, 3185, 109, "Wall"));	//Trees in the bottom
+    	townWalls.add(new InWorldWalls(handler, 815, 1683, 365, 299, "Wall"));	//Trees right corner of park
+    	townWalls.add(new InWorldWalls(handler, 481, 1221, 207, 55, "Wall"));	//Bench in park
+    	townWalls.add(new InWorldWalls(handler, 1123, 1129, 43, 59, "Wall"));	//Pole in park
+    	townWalls.add(new InWorldWalls(handler, 925, 1097, 37, 29, "Wall"));	//Sign in park
+    	townWalls.add(new InWorldWalls(handler, 1795, 1119, 945, 505, "Wall"));	//House with pond
+    	townWalls.add(new InWorldWalls(handler, 2227, 1645, 513, 83, "Wall"));	//Bottom fence of house with pond
+    	townWalls.add(new InWorldWalls(handler, 1815, 1691, 31, 33, "Wall"));	//Mailbox in house with pond
+    	townWalls.add(new InWorldWalls(handler, 1709, 1111, 47, 65, "Wall"));	//Pole in house with pond
+    	townWalls.add(new InWorldWalls(handler, 1639, 1487, 153, 125, "Wall"));	//Bush next to house with pond
+    	townWalls.add(new InWorldWalls(handler, 1551, 1923, 49, 63, "Wall"));	//Pole in the bottom
+    	townWalls.add(new InWorldWalls(handler, 3051, 1919, 49, 67, "Wall"));	//Other pole in the bottom (right)
+    	townWalls.add(new InWorldWalls(handler, 2967, 1679, 41, 27, "Wall"));	//Sign in right house
+    	townWalls.add(new InWorldWalls(handler, 3023, 1105, 659, 483, "Wall"));	//Right house
+    	townWalls.add(new InWorldWalls(handler, 3391, 1571, 291, 409, "Wall"));	//Tress on the right side of right house
+    	townWalls.add(new InWorldWalls(handler, 3493, 1013, 189, 179, "Wall"));	//Bottom fence near entrance/exit
+    	townWalls.add(new InWorldWalls(handler, 3493, 725, 189, 115, "Wall"));	//Top fence near entrance/exit
+    	townWalls.add(new InWorldWalls(handler, 3027, 639, 655, 81, "Wall"));	//Bottom fence in top right house
+    	townWalls.add(new InWorldWalls(handler, 2185, 0, 1500, 607, "Wall"));	//Top right house
+    	townWalls.add(new InWorldWalls(handler, 2425, 673, 31, 37, "Wall"));	//Mailbox in top right house
+    	townWalls.add(new InWorldWalls(handler, 2195, 681, 31, 23, "Wall"));	//Sign in top right house
+    	townWalls.add(new InWorldWalls(handler, 1853, 0, 323, 124, "Wall"));	//Top bench
+    	townWalls.add(new InWorldWalls(handler, 3609, 845, 73, 171, "Exit"));	//Exit the cave, topish right corner
     	
     }
 
