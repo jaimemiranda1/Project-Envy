@@ -288,6 +288,7 @@ public class FightState extends InWorldState{
         if(GameSetUp.DEBUGMODE){
             g.setFont((new Font("IMPACT", Font.ITALIC, 25)));
             g.drawString("Turn: "+String.valueOf(turn),handler.getWidth()/2,25);
+        
 
             //player
             g.drawString("Accuracy: "+String.valueOf(handler.getEntityManager().getPlayer().getAcc()),0,300);

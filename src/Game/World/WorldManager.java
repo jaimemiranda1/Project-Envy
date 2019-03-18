@@ -76,6 +76,7 @@ public class WorldManager {
 
 		if(GameSetUp.DEBUGMODE){
 
+			
 			g2.setColor(Color.BLACK);
 			g2.draw(rectangle);
 			for (Walls w: this.worldWalls) {
@@ -152,7 +153,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 1655, 90, 55, 50, "Guard"));
 		
 		//Town
-		worldWalls.add(new Walls(handler, 1080, 385, 220, 290, "Town"));
+		worldWalls.add(new Walls(handler, 1080, 405, 220, 270, "Town"));
 	}
 
 	public void collidedWithWall() {
