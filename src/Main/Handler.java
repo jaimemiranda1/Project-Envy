@@ -1,7 +1,10 @@
 package Main;
 
+import Game.Entities.Dynamics.BaseDynamicEntity;
 import Game.Entities.Dynamics.BaseHostileEntity;
 import Game.Entities.Dynamics.EnemyOne;
+import Game.Entities.Dynamics.WiseOldMan;
+import Game.Entities.Statics.BaseStaticEntity;
 import Input.KeyManager;
 import Input.MouseManager;
 
@@ -176,5 +179,12 @@ public class Handler {
 		}
 
 
+	}
+	
+	public BaseHostileEntity newOldMan(BufferedImage[] image,Handler handler,int xPosition,int yPosition ,String name, String typeOfDynamic, String state,String area) {
+		
+			WiseOldMan w = new WiseOldMan(handler,xPosition,yPosition,state , name, area , image);
+			return w;		
+		
 	}
 }

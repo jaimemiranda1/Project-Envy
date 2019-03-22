@@ -16,8 +16,8 @@ public class WiseOldMan extends BaseHostileEntity {
 
 	public WiseOldMan(Handler handler, int xPosition, int yPosition, String state, String name1, String area, BufferedImage[] animFrames) {
 		super(handler, yPosition, yPosition, state, name1, area, animFrames);
-		width = 30;
-		height = 30;
+		width = 100;
+		height = 100;
 		speed = 1;
 		type="WiseOldMan";
 		this.setXOffset(xPosition);
@@ -29,6 +29,7 @@ public class WiseOldMan extends BaseHostileEntity {
 
 	@Override
 	public void tick() {
+		
 
 		if(!Player.isinArea)super.tick();
 
@@ -40,20 +41,20 @@ public class WiseOldMan extends BaseHostileEntity {
 		Graphics2D g2 = (Graphics2D) g;
 
 
-		if(handler.getArea().equals(this.Area)) {
+		if(handler.getArea().equals("Town")) {
 			if (!Player.checkInWorld) {
 				wiseOldMan = new Rectangle((int) (handler.getXDisplacement() + getXOffset()),
 						(int) (handler.getYDisplacement() + getYOffset()), 45, 45);
 
 			} else {
 				wiseOldMan = new Rectangle((int) (handler.getXInWorldDisplacement() + getXOffset()),
-						(int) (handler.getYInWorldDisplacement() + getYOffset()), 70, 70);
+						(int) (handler.getYInWorldDisplacement() + getYOffset()), 80, 80);
 
 			}
 
-			g2.setColor(Color.black);
+			g2.setColor(Color.BLACK);
 
-			g.drawImage(Images.ghost,wiseOldMan.x,wiseOldMan.y,wiseOldMan.width,wiseOldMan.height,null);
+			g.drawImage(Images.oldMan[0],wiseOldMan.x,wiseOldMan.y,wiseOldMan.width,wiseOldMan.height,null);
 
 			if (wiseOldMan.intersects(handler.getEntityManager().getPlayer().getCollision())) {
 				handler.getEntityManager().getPlayer().facing = "Left";

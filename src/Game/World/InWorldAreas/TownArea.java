@@ -34,6 +34,8 @@ public class TownArea extends BaseArea {
 
         this.entityManager = entityManager;
         
+        this.entityManager.AddEntity(handler.newOldMan(Images.oldMan,handler,3609,845,"Jaime","WiseOldMan","InWorldState","Town" ));
+        
         townWalls = new ArrayList<>();
         AddWalls();
 
@@ -75,7 +77,7 @@ public class TownArea extends BaseArea {
             }
         }
 
-
+        g2.setColor(Color.BLACK);
         entityManager.render(g);
 
     }

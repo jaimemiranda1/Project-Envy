@@ -63,6 +63,8 @@ public class CaveBlocker extends BaseStaticEntity {
 			return true;
 		}
 		return open;
+		
+		
 
 		
 	}

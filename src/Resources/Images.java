@@ -40,13 +40,15 @@ public class Images {
 	public static BufferedImage envyTitle;
 	public static BufferedImage ghost;
 
-
+	public static SpriteSheet oldManSheet;
 	public static SpriteSheet playerSheet;
 	public static BufferedImage[] player_front;
 	public static BufferedImage[] player_left;
 	public static BufferedImage[] player_right;
 	public static BufferedImage[] player_back;
 	public static BufferedImage player_attack;
+	
+	public static BufferedImage[] oldMan;
 
 	public static BufferedImage[] PEnemyIdle;
 	public static BufferedImage[] WEnemyIdle;
@@ -124,6 +126,8 @@ public class Images {
 		player_right = new BufferedImage[4];
 		player_left = new BufferedImage[4];
 		player_back = new BufferedImage[4];
+		
+		oldMan = new BufferedImage[1];
 
 		PEnemyIdle = new BufferedImage[7];
 		WEnemyIdle = new BufferedImage[3];
@@ -226,7 +230,10 @@ public class Images {
 			PEnemyIdle[4] = PEnemySheet.crop(155, 0, 36, 40);
 			PEnemyIdle[5] = PEnemySheet.crop(192, 0, 37, 40);
 			PEnemyIdle[6] = PEnemySheet.crop(233, 0, 37, 40);
-
+			
+			oldManSheet = new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/wiseOldMan.png")));
+			
+			oldMan[0] = oldManSheet.crop(194, 259, 57, 65);
 
 			playerSheet =  new SpriteSheet(ImageIO.read(getClass().getResourceAsStream("/Sheets/player.png")));
 

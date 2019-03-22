@@ -862,7 +862,6 @@ public class FightState extends InWorldState{
             }
         }
     }
-
     public int getFightWordXPos() {
         return fightWordXPos;
     }
