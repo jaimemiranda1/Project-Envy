@@ -92,7 +92,7 @@ public class TownArea extends BaseArea {
     	townWalls.add(new InWorldWalls(handler, 1831, 793, 53, 65, "Wall"));	//Pole in top house
     	townWalls.add(new InWorldWalls(handler, 0, 375, 90, 237, "Wall"));		//Left Trees near top house
     	townWalls.add(new InWorldWalls(handler, 0, 563, 418, 353, "Wall"));		//
-    	townWalls.add(new InWorldWalls(handler, 1679, 439, 193, 45, "Wall"));	//Bush in the right of top house
+    	townWalls.add(new InWorldWalls(handler, 1679, 439, 185, 45, "Wall"));	//Bush in the right of top house
     	townWalls.add(new InWorldWalls(handler, 0, 767, 201, 1337, "Wall"));	//Left trees
     	townWalls.add(new InWorldWalls(handler, 201, 1083, 331, 185, "Wall"));	//Top trees near park
     	townWalls.add(new InWorldWalls(handler, 169, 1259, 197, 141, "Wall"));	//Trees next to bench on park
@@ -119,7 +119,7 @@ public class TownArea extends BaseArea {
     	townWalls.add(new InWorldWalls(handler, 2425, 673, 31, 37, "Wall"));	//Mailbox in top right house
     	townWalls.add(new InWorldWalls(handler, 2195, 681, 31, 23, "Wall"));	//Sign in top right house
     	townWalls.add(new InWorldWalls(handler, 1853, 0, 323, 124, "Wall"));	//Top bench
-    	townWalls.add(new InWorldWalls(handler, 3609, 845, 73, 171, "Exit"));	//Exit the cave, topish right corner
+    	townWalls.add(new InWorldWalls(handler, 3609, 845, 73, 171, "Exit"));	//Exit the town, topish right corner
     	
     }
 

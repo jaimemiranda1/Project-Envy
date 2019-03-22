@@ -24,6 +24,7 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	boolean canMove = true;
 	public String foundState;
 	public String name="enemy";
+	public String name1="Chifu";
 	public String Area;//None for MapState
     public String type;//class it is ex: "EnemyOne"
 
