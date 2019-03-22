@@ -49,15 +49,21 @@ public class WiseOldMan extends BaseHostileEntity {
 			} else {
 				wiseOldMan = new Rectangle((int) (handler.getXInWorldDisplacement() + getXOffset()),
 						(int) (handler.getYInWorldDisplacement() + getYOffset()), 80, 80);
+				
 
 			}
 
 			g2.setColor(Color.BLACK);
 
 			g.drawImage(Images.oldMan[0],wiseOldMan.x,wiseOldMan.y,wiseOldMan.width,wiseOldMan.height,null);
-
+			
+			//if(chasingPlayer) {
+			//g.drawImage(Images.Talk,wiseOldMan.x,wiseOldMan.y - 100,wiseOldMan.width,wiseOldMan.height - 10,null);
+			//}
+			
 			if (wiseOldMan.intersects(handler.getEntityManager().getPlayer().getCollision())) {
 				handler.getEntityManager().getPlayer().facing = "Left";
+				
 			}
 		}
 	}

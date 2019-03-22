@@ -35,6 +35,8 @@ public class Images {
 	public static BufferedImage map[];
 	
 	public static Image Scaledmap[];
+	
+	public static BufferedImage Talk;
 
 	public static BufferedImage projectTitle;
 	public static BufferedImage envyTitle;
@@ -193,6 +195,7 @@ public class Images {
 			titleChoose[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Title2.png"));
 			StatBut[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Stats.png"));
 			StatBut[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Stats2.png"));
+			Talk = ImageIO.read(getClass().getResourceAsStream("/Buttons/TalkButton.png"));
 
 			battleBackground[0] = ImageIO.read(getClass().getResourceAsStream("/Sheets/mountain river.jpg"));
 			battleBackground[1] = ImageIO.read(getClass().getResourceAsStream("/Sheets/forest.jpg"));

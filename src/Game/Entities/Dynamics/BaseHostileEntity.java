@@ -15,7 +15,7 @@ import Main.Handler;
 public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 
 	private Random rand;
-	private boolean chasingPlayer;
+	public static boolean chasingPlayer;
 	private Rectangle detector;
 
 	private int count;
@@ -63,8 +63,13 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	
 	                if (!chasingPlayer) {
 	                    Move();
-	                } else {
-	                    Chase();
+	                } 
+	                else 
+	                {
+	                
+	                Chase();
+	                
+	                	
 	                }
 	            }
 	            canMove = true;
