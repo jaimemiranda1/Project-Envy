@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 
 import com.sun.glass.events.KeyEvent;
 
+import Game.GameStates.FightState;
 import Input.KeyManager;
 import Main.Handler;
 import Resources.Images;
@@ -20,6 +21,7 @@ public class WiseOldMan extends BaseHostileEntity {
 	int width, height;
 	public static boolean talking;
 	public static boolean activeQuest;
+	public static boolean canUseSkill = false;
 	
 
 	public WiseOldMan(Handler handler, int xPosition, int yPosition, String state, String name1, String area, BufferedImage[] animFrames) {
@@ -73,11 +75,22 @@ public class WiseOldMan extends BaseHostileEntity {
 				activeQuest = true;
 				
 				}
-			if(talking && BaseHostileEntity.playerInRange ) {
+			
+			
+			if(talking && BaseHostileEntity.playerInRange && !FightState.unlockedSkill ) {
 				
 				g.drawString("Greetings traveler, slay Jovan,", wiseOldMan.x - 120,wiseOldMan.y - 75);
 				g.drawString(" and I shall bestow upon thee, magic powers!", wiseOldMan.x - 230, wiseOldMan.y -50);
 			}
+			else if( talking && FightState.unlockedSkill && BaseHostileEntity.playerInRange) {
+				
+				handler.getEntityManager().getPlayer().setSkill("Freeze");
+				g.drawString("Welcome back traveler, I see you have completed my quest.", wiseOldMan.x - 260,wiseOldMan.y - 75);
+				g.drawString("As promised, here are thy macgical POWERSS!  ", wiseOldMan.x - 170, wiseOldMan.y -50);
+				canUseSkill = true;
+				
+			}
+			
 			else if(!BaseHostileEntity.playerInRange) {
 				talking = false;
 			}

@@ -1,6 +1,7 @@
 package Game.GameStates;
 
 import Game.Entities.Dynamics.BaseHostileEntity;
+import Game.Entities.Dynamics.WiseOldMan;
 import Main.GameSetUp;
 import Main.Handler;
 
@@ -228,8 +229,6 @@ public class FightState extends InWorldState{
                 if(enemy.name.contentEquals("Jovan")) {//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                 	
                 	unlockedSkill = true;
-                	
-                	handler.getEntityManager().getPlayer().setSkill("Freeze");
                 }
                 
                 enemy.kill();
@@ -508,8 +507,9 @@ public class FightState extends InWorldState{
         uiManager.addObjects(new UIImageButton(handler.getWidth() * 38/60 - 128/2, 5*handler.getHeight()/6, 128, 64, Images.Skill, new ClickListlener() {
             @Override
             public void onClick() {
-                if(handler.getEntityManager().getPlayer().getMana()>=25 && unlockedSkill) {
-                    System.out.println("Skill");
+                if(handler.getEntityManager().getPlayer().getMana()>=25 && unlockedSkill && handler.getEntityManager().getPlayer().getSkill().equals("Freeze")); {
+                    System.out.println(handler.getEntityManager().getPlayer().getSkill());
+                	System.out.println("Skill");
                     skill = true;
                 }
 

@@ -61,7 +61,7 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
             }
             g2.setColor(Color.black);
             
-            if(handler.getArea().equals("Town") && WiseOldMan.activeQuest)
+            if(handler.getArea().equals("Town") && WiseOldMan.activeQuest && !FightState.unlockedSkill)
             {
             	g.drawImage(Images.ghost,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);
             }
@@ -72,7 +72,7 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
             
             
             
-            if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getArea().equals("Town") && WiseOldMan.activeQuest) {
+            if (enemyOne.intersects(handler.getEntityManager().getPlayer().getCollision()) && handler.getArea().equals("Town") && WiseOldMan.activeQuest && !FightState.unlockedSkill) {
                 handler.getEntityManager().getPlayer().facing = "Left";
                 State.setState(new FightState(handler, this, this.Area));
             }
