@@ -18,8 +18,7 @@ public class TownArea extends BaseArea {
     public static boolean isInTown = false;
 
     private int imageWidth = 3682, imageHeight = 2104;
-    public final static int playerXSpawn = -2300, playerYSpawn = -340
-    		;
+    public final static int playerXSpawn = -2300, playerYSpawn = -340;
 
     private Rectangle background = new Rectangle(3000, 3000);
 
