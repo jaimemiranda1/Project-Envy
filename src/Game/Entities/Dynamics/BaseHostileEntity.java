@@ -17,6 +17,7 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	private Random rand;
 	public static boolean chasingPlayer;
 	private Rectangle detector;
+	public static boolean playerInRange;
 
 	private int count;
 	private int directionMov;
@@ -64,7 +65,8 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	                if (!chasingPlayer) {
 	                    Move();
 	                } 
-	                else 
+	                
+	                else if(!handler.getArea().equals("Town")) 
 	                {
 	                
 	                Chase();
@@ -176,6 +178,7 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 				detector.getWidth() * 10, detector.getHeight() * 10);
 
 		chasingPlayer = handler.getEntityManager().getPlayer().getCollision().intersects(detector);
+		playerInRange = chasingPlayer;
 
 		if (!Player.checkInWorld) {
 			chaseSpeed = 1.5;

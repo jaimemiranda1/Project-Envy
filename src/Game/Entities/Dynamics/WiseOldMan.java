@@ -1,18 +1,25 @@
 package Game.Entities.Dynamics;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
+import com.sun.glass.events.KeyEvent;
+
+import Input.KeyManager;
 import Main.Handler;
 import Resources.Images;
+
 
 public class WiseOldMan extends BaseHostileEntity {
 
 	Rectangle wiseOldMan;
 	int width, height;
+	public static boolean talking;
+	
 
 	public WiseOldMan(Handler handler, int xPosition, int yPosition, String state, String name1, String area, BufferedImage[] animFrames) {
 		super(handler, yPosition, yPosition, state, name1, area, animFrames);
@@ -37,7 +44,7 @@ public class WiseOldMan extends BaseHostileEntity {
 	@Override
 	public void render(Graphics g) {
 		super.render(g);
-
+		g.setFont(new Font("Arial",Font.BOLD,28));
 		Graphics2D g2 = (Graphics2D) g;
 
 
@@ -57,9 +64,20 @@ public class WiseOldMan extends BaseHostileEntity {
 
 			g.drawImage(Images.oldMan[0],wiseOldMan.x,wiseOldMan.y,wiseOldMan.width,wiseOldMan.height,null);
 			
-			//if(chasingPlayer) {
-			//g.drawImage(Images.Talk,wiseOldMan.x,wiseOldMan.y - 100,wiseOldMan.width,wiseOldMan.height - 10,null);
-			//}
+			if(BaseHostileEntity.playerInRange && !talking) {
+					g.drawImage(Images.Talk,wiseOldMan.x,wiseOldMan.y - 100,wiseOldMan.width,wiseOldMan.height - 10,null);
+				}
+			if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_E)) {
+				this.talking = true;
+				}
+			if(talking && BaseHostileEntity.playerInRange) {
+				
+				g.drawString("Greetings traveler, slay Jovan,", wiseOldMan.x - 120,wiseOldMan.y - 75);
+				g.drawString(" and I shall bestow upon thee, magic powers!", wiseOldMan.x - 2310, wiseOldMan.y -50);
+			}
+			else if(!BaseHostileEntity.playerInRange) {
+				talking = false;
+			}
 			
 			if (wiseOldMan.intersects(handler.getEntityManager().getPlayer().getCollision())) {
 				handler.getEntityManager().getPlayer().facing = "Left";

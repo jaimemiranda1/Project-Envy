@@ -34,7 +34,7 @@ public class TownArea extends BaseArea {
 
         this.entityManager = entityManager;
         
-        this.entityManager.AddEntity(handler.newOldMan(Images.oldMan,handler,3609,845,"Jaime","WiseOldMan","InWorldState","Town" ));
+        this.entityManager.AddEntity(handler.newOldMan(Images.oldMan,handler,497,1290,"Jaime","WiseOldMan","InWorldState","Town" ));
         
         townWalls = new ArrayList<>();
         AddWalls();

@@ -34,6 +34,7 @@ public class KeyManager implements KeyListener {
 	public boolean pbutt=false;
 	public boolean runbutt=false;
 	public boolean healbutt = false;
+	public boolean talkbutt = false;
 
 
 	public KeyManager(){
@@ -67,6 +68,8 @@ public class KeyManager implements KeyListener {
 		fattbut = keys[KeyEvent.VK_C];
 		pbutt = keys[KeyEvent.VK_ESCAPE];
 		runbutt = keys[KeyEvent.VK_SHIFT];
+		
+		talkbutt = keys[KeyEvent.VK_E];
 		
 
 	}
