@@ -40,7 +40,7 @@ public class CaveBlocker extends BaseStaticEntity {
 		
 		
 
-		if(!FightState.unlockedSkill || !open || !handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {
+		if(!open || !handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {
 		g.drawImage(Images.caveBlocker, (int)(handler.getXDisplacement() + xPosition),(int)( handler.getYDisplacement() + yPosition), width, height, null);
 		collision = new Rectangle((int)(handler.getXDisplacement() + xPosition + 5), (int)(handler.getYDisplacement() + yPosition + 20), width * 2, height * 2);
 		}
@@ -58,7 +58,7 @@ public class CaveBlocker extends BaseStaticEntity {
 
 		playerInRange = handler.getEntityManager().getPlayer().getCollision().intersects(detector);
 		
-		if(playerInRange && FightState.unlockedSkill) {
+		if(playerInRange && handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {
 		
 			return true;
 		}

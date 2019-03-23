@@ -201,7 +201,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 			for (Walls w : handler.getWorldManager().getWalls()) {
 
 				if (nextArea.intersects(w)) {
-					if(w.getType().equals("Guard") && !FightState.unlockedSkill) {
+					if(w.getType().equals("Guard") && !handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {
 						PushPlayerBack();
 					}
 
@@ -226,7 +226,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 					else if (w.getType().startsWith("Door")) {
 						canMove = true;
 
-						if (w.getType().equals("Door Cave") && FightState.unlockedSkill) {//++++++++++++++++++++++++++++++++++
+						if (w.getType().equals("Door Cave") && handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {//++++++++++++++++++++++++++++++++++
 							checkInWorld = true;
 							InWorldState.caveArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
 							InWorldState.caveArea.oldPlayerYCoord = (int) (handler.getYDisplacement());
