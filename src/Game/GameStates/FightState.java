@@ -275,7 +275,7 @@ public class FightState extends InWorldState{
 						TownArea.isInTown = true;
 						handler.setXInWorldDisplacement(TownArea.playerXSpawn);
 						handler.setYInWorldDisplacement(TownArea.playerYSpawn);
-						GameSetUp.LOADING = true;
+						GameSetUp.LOADING = false;
 						handler.setArea("Town");
 
 						State.setState(handler.getGame().inWorldState.setArea(InWorldState.townArea));
