@@ -509,7 +509,8 @@ public class FightState extends InWorldState{
             public void onClick() {
                 if(handler.getEntityManager().getPlayer().getMana()>=25 && unlockedSkill && handler.getEntityManager().getPlayer().getSkill().equals("Freeze")); {
                     System.out.println(handler.getEntityManager().getPlayer().getSkill());
-                	System.out.println("Skill");
+                    System.out.println(unlockedSkill);
+                    System.out.println("Skill");
                     skill = true;
                 }
 
