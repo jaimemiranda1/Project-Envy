@@ -1,14 +1,13 @@
 package Game.GameStates;
 
-import Game.Entities.Dynamics.BaseHostileEntity;
-import Game.Entities.Dynamics.WiseOldMan;
-import Main.GameSetUp;
-import Main.Handler;
-
-import Resources.Animation;
-import Resources.Images;
-
-import java.awt.*;
+import java.awt.AlphaComposite;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import java.util.Random;
@@ -16,6 +15,13 @@ import java.util.Random;
 import Display.UI.ClickListlener;
 import Display.UI.UIImageButton;
 import Display.UI.UIManager;
+import Game.Entities.Dynamics.BaseHostileEntity;
+import Game.Entities.Dynamics.Player;
+import Game.World.InWorldAreas.TownArea;
+import Main.GameSetUp;
+import Main.Handler;
+import Resources.Animation;
+import Resources.Images;
 
 
 @SuppressWarnings("Duplicates")
@@ -261,7 +267,20 @@ public class FightState extends InWorldState{
                         
                         State.setState(handler.getGame().mapState);
                         handler.setArea("None");
-                    }else{
+                    }
+                    else if(prevState.equals("Town")){
+                    	Player.checkInWorld = true;
+						InWorldState.townArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
+						InWorldState.townArea.oldPlayerYCoord = (int) (handler.getYDisplacement());
+						TownArea.isInTown = true;
+						handler.setXInWorldDisplacement(TownArea.playerXSpawn);
+						handler.setYInWorldDisplacement(TownArea.playerYSpawn);
+						GameSetUp.LOADING = true;
+						handler.setArea("Town");
+
+						State.setState(handler.getGame().inWorldState.setArea(InWorldState.townArea));
+                    }
+                    else {
                     	// cave music
                         handler.setArea(InWorldState.currentArea.name);
                         
