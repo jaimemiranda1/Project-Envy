@@ -67,13 +67,13 @@ public class WiseOldMan extends BaseHostileEntity {
 			if(BaseHostileEntity.playerInRange && !talking) {
 					g.drawImage(Images.Talk,wiseOldMan.x,wiseOldMan.y - 100,wiseOldMan.width,wiseOldMan.height - 10,null);
 				}
-			if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_E)) {
-				this.talking = true;
+			if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_E) && BaseHostileEntity.playerInRange) {
+				talking = true;
 				}
-			if(talking && BaseHostileEntity.playerInRange) {
+			if(talking && BaseHostileEntity.playerInRange ) {
 				
 				g.drawString("Greetings traveler, slay Jovan,", wiseOldMan.x - 120,wiseOldMan.y - 75);
-				g.drawString(" and I shall bestow upon thee, magic powers!", wiseOldMan.x - 2310, wiseOldMan.y -50);
+				g.drawString(" and I shall bestow upon thee, magic powers!", wiseOldMan.x - 230, wiseOldMan.y -50);
 			}
 			else if(!BaseHostileEntity.playerInRange) {
 				talking = false;

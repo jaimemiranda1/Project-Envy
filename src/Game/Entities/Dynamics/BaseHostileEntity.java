@@ -66,7 +66,7 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	                    Move();
 	                } 
 	                
-	                else if(!handler.getArea().equals("Town")) 
+	                else if(!handler.getArea().equals("Town") || this.name.equals("Jovan") ) 
 	                {
 	                
 	                Chase();
@@ -178,8 +178,12 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 				detector.getWidth() * 10, detector.getHeight() * 10);
 
 		chasingPlayer = handler.getEntityManager().getPlayer().getCollision().intersects(detector);
-		playerInRange = chasingPlayer;
-
+		
+		if(this instanceof WiseOldMan) {
+		
+			playerInRange = chasingPlayer;
+		}
+		
 		if (!Player.checkInWorld) {
 			chaseSpeed = 1.5;
 		}

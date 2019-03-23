@@ -53,8 +53,15 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
                         (int) (handler.getYInWorldDisplacement() + getYOffset()), 70, 70);
 
             }
+            
+            if(handler.getArea().equals("Town")) {
+            	  enemyOne = new Rectangle((int) (handler.getXInWorldDisplacement() + getXOffset()),
+                          (int) (handler.getYInWorldDisplacement() + getYOffset()), 70, 70);
 
+            }
             g2.setColor(Color.black);
+            
+            
 
             g.drawImage(Images.ghost,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);
 
