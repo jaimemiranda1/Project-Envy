@@ -19,6 +19,7 @@ public class WiseOldMan extends BaseHostileEntity {
 	Rectangle wiseOldMan;
 	int width, height;
 	public static boolean talking;
+	public static boolean activeQuest;
 	
 
 	public WiseOldMan(Handler handler, int xPosition, int yPosition, String state, String name1, String area, BufferedImage[] animFrames) {
@@ -69,6 +70,8 @@ public class WiseOldMan extends BaseHostileEntity {
 				}
 			if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_E) && BaseHostileEntity.playerInRange) {
 				talking = true;
+				activeQuest = true;
+				
 				}
 			if(talking && BaseHostileEntity.playerInRange ) {
 				

@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import Game.Entities.EntityManager;
+import Game.Entities.Dynamics.WiseOldMan;
 import Game.Entities.Statics.LightStatue;
 import Game.World.Walls;
 
@@ -36,6 +37,7 @@ public class TownArea extends BaseArea {
         
         this.entityManager.AddEntity(handler.newOldMan(Images.oldMan,handler,497,1290,"Jaime","WiseOldMan","InWorldState","Town" ));
         this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,495, 700,"InWorldState","Jovan","Town","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null));
+        
         townWalls = new ArrayList<>();
         AddWalls();
 
