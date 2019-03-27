@@ -66,7 +66,7 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	                    Move();
 	                } 
 	                
-	                else if(!handler.getArea().equals("Town") || this.name.equals("Jovan") && WiseOldMan.activeQuest ) 
+	                else if(!handler.getArea().equals("Town") || this.name.equals("Jovan") && WiseOldMan.activeQuest) 
 	                {
 	                
 	                Chase();
