@@ -153,7 +153,7 @@ public class WorldManager {
 		worldWalls.add(new Walls(handler, 1655, 90, 55, 50, "Guard"));
 		
 		//Town
-		worldWalls.add(new Walls(handler, 1080, 405, 220, 270, "Town"));
+		worldWalls.add(new Walls(handler, 1080, 415, 220, 260, "Town"));
 	}
 
 	public void collidedWithWall() {

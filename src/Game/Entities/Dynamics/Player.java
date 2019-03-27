@@ -282,6 +282,14 @@ public class Player extends BaseDynamicEntity implements Fighter {
 								handler.setXDisplacement(InWorldState.caveArea.oldPlayerXCoord);// Sets the player x/y
 								handler.setYDisplacement(InWorldState.caveArea.oldPlayerYCoord);// outside theCave
 							}
+							else if(iw.getType().equals("Boss Portal")) {
+								
+								handler.setXDisplacement(InWorldState.caveArea.oldPlayerXCoord - 950);// Sets the player x/y
+								handler.setYDisplacement(InWorldState.caveArea.oldPlayerYCoord - 2500);// outside theCave
+								
+								
+								
+							}
 
 							GameSetUp.LOADING = true;
 							handler.setArea("None");

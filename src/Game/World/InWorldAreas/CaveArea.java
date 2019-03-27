@@ -129,6 +129,8 @@ public class CaveArea extends BaseArea {
 
         caveWalls.add(new InWorldWalls(handler, 2950, 340, 320, 100, "Start Exit"));							// Exit at Start
         caveWalls.add(new InWorldWalls(handler, 1230, 3900, 280, 100, "End Exit"));							// Exit at End
+        
+        caveWalls.add(new InWorldWalls(handler, 2150, 2195, 30, 30, "Boss Portal"));                                 // Boss Portal
 
 
 
