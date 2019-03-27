@@ -51,6 +51,7 @@ public class Images {
 	public static BufferedImage player_attack;
 	
 	public static BufferedImage[] oldMan;
+	public static BufferedImage[] boss;
 
 	public static BufferedImage[] PEnemyIdle;
 	public static BufferedImage[] WEnemyIdle;
@@ -130,6 +131,7 @@ public class Images {
 		player_back = new BufferedImage[4];
 		
 		oldMan = new BufferedImage[1];
+		boss = new BufferedImage[1];
 
 		PEnemyIdle = new BufferedImage[7];
 		WEnemyIdle = new BufferedImage[3];
@@ -205,6 +207,8 @@ public class Images {
 			Attack[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Attack.png"));
 			Defend[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Defend.png"));
 			Skill[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Skill.png"));
+			
+			boss[0] = ImageIO.read(getClass().getResourceAsStream("/Sheets/Boss.png"));
 
 			smokeHouse[0] = smokeHouseSheet.crop(20, 7, 19, 20);
 			smokeHouse[1] = smokeHouseSheet.crop(68, 7, 19, 20);

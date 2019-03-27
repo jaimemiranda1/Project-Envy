@@ -86,7 +86,7 @@ public class WiseOldMan extends BaseHostileEntity {
 				
 				handler.getEntityManager().getPlayer().setSkill("Freeze");
 				g.drawString("Welcome back traveler, I see you have completed my quest.", wiseOldMan.x - 300,wiseOldMan.y - 75);
-				g.drawString("As promised, here are thy macgical POWERSS! Go to the CAVE now.", wiseOldMan.x - 360, wiseOldMan.y -50);
+				g.drawString("As promised, here are thy magical POWERS! Go to the CAVE now.", wiseOldMan.x - 360, wiseOldMan.y -50);
 				canUseSkill = true;
 				
 			}

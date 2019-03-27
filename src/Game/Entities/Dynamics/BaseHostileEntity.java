@@ -50,7 +50,7 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	            UpdateNextMove();
 	            checkCollision();
 	
-	            if(this.name.equals("pepe"))
+	            if(this.name.equals("Lord JJ"))
 	            {
 	            	canMove = false;
 	            }

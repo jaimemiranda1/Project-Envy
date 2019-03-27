@@ -65,10 +65,10 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
             {
             	g.drawImage(Images.ghost,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);
             }
-            else if(!handler.getArea().equals("Town") && !this.name.equals("pepe")) {
+            else if(!handler.getArea().equals("Town") && !this.name.equals("Lord JJ")) {
             	g.drawImage(Images.ghost,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);
             }
-            else if(!handler.getArea().equals("Town") && this.name.equals("pepe")){
+            else if(!handler.getArea().equals("Town") && this.name.equals("Lord JJ")){
             	g.drawImage(Images.caveBlocker,enemyOne.x,enemyOne.y,enemyOne.width,enemyOne.height,null);
             }
             
