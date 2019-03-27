@@ -50,7 +50,10 @@ public class BaseHostileEntity extends BaseDynamicEntity implements Fighter{
 	            UpdateNextMove();
 	            checkCollision();
 	
-	
+	            if(this.name.equals("pepe"))
+	            {
+	            	canMove = false;
+	            }
 	            if (canMove) {
 	                count++;
 	                if (count >= 100 + rand.nextInt(350)) {

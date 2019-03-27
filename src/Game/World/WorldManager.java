@@ -1,7 +1,6 @@
 package Game.World;
 
 import Game.Entities.EntityManager;
-import Game.Entities.Statics.Boss;
 import Game.Entities.Statics.CaveBlocker;
 import Game.Entities.Statics.SmokeHouse;
 import Game.Entities.Statics.Tree;
@@ -13,6 +12,7 @@ import Resources.Animation;
 import Resources.Images;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class WorldManager {
@@ -40,12 +40,12 @@ public class WorldManager {
 		this.entityManager.AddEntity(new Tree(handler, 600, 600));
 		this.entityManager.AddEntity(new SmokeHouse(handler, 1153, 335));
 		this.entityManager.AddEntity(new CaveBlocker(handler, 1655, 60));
-		this.entityManager.AddEntity(new Boss(handler, 2575, 2000));
+	
 
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,500, 800,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,1400, 600,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
 		this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,2400, -200,"MapState","Common Rat","None","EnemyOne",100,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null)); // lvl 0 dificulty
-		//this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,2550, 3000,"MapState","pepe","None","EnemyOne",10000,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null));
+		this.entityManager.AddEntity(handler.newEnemy(Images.oldMan,handler,2570, 2340,"MapState","pepe","None","Boss",10000,25,40,1,8,12,20,10,20,10,1,5,"None","Fire",null,null));
 		
 		this.entityManager.AddEntity(circle);
 
@@ -157,6 +157,7 @@ public class WorldManager {
 		
 		//Town
 		worldWalls.add(new Walls(handler, 1080, 415, 220, 260, "Town"));
+	
 	}
 
 	public void collidedWithWall() {
