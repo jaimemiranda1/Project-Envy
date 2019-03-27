@@ -69,7 +69,8 @@ public class CaveArea extends BaseArea {
         g2.fill(background);
 
         g.drawImage(Images.ScaledCave, handler.getXInWorldDisplacement(), handler.getYInWorldDisplacement(), null);
-
+        g.drawImage(Images.darkHole, 2150, 2195, null);
+        
         if (GameSetUp.DEBUGMODE) {
             for (Walls w : caveWalls) {
 

@@ -99,6 +99,8 @@ public class Images {
 	public static Image ScaledArea;
 	public static BufferedImage tree;
 	public static BufferedImage caveBlocker;
+	public static BufferedImage bossShadow;
+	public static BufferedImage darkHole;
 	
 	public Images() {
 
@@ -171,6 +173,8 @@ public class Images {
 			TownMap = ImageIO.read(getClass().getResourceAsStream("/Worlds/TownMap.png"));
 			tree = ImageIO.read(getClass().getResourceAsStream("/Sheets/Tree.png"));
 			caveBlocker = ImageIO.read(getClass().getResourceAsStream("/Sheets/Knight.png"));//+++++++++++++++++++++++++++++++++++++++
+			bossShadow = ImageIO.read(getClass().getResourceAsStream("/Sheets/BossShadow.png"));
+			darkHole = ImageIO.read(getClass().getResourceAsStream("/Sheets/DarkHole.jpg"));
 			title = ImageIO.read(getClass().getResourceAsStream("/Sheets/menuImage.png"));
 			title2 = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
 			title3 = ImageIO.read(getClass().getResourceAsStream("/Sheets/static.jpg"));
