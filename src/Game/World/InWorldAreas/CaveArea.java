@@ -1,14 +1,18 @@
 package Game.World.InWorldAreas;
 
-import Main.GameSetUp;
-import Main.Handler;
-import Resources.Images;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import Game.Entities.EntityManager;
 import Game.Entities.Statics.LightStatue;
+import Game.Entities.Statics.Portal;
 import Game.World.Walls;
+import Main.GameSetUp;
+import Main.Handler;
+import Resources.Images;
 
 public class CaveArea extends BaseArea {
 
@@ -40,6 +44,7 @@ public class CaveArea extends BaseArea {
         this.entityManager.AddEntity(handler.newEnemy(Images.PEnemyIdle,handler,3000, 1000,"InWorldState","Cave Dweller","Cave","EnemyOne",100,25,60,10,1,12,20,10,20,13,1,10,"None","Thunder",null,null)); // lvl 1 difficulty
 
         this.entityManager.AddEntity(new LightStatue (handler, 2080, 1770));
+        this.entityManager.AddEntity(new Portal (handler, 2150, 2195));
         
         caveWalls = new ArrayList<>();
         AddWalls();
@@ -69,7 +74,6 @@ public class CaveArea extends BaseArea {
         g2.fill(background);
 
         g.drawImage(Images.ScaledCave, handler.getXInWorldDisplacement(), handler.getYInWorldDisplacement(), null);
-        //g.drawImage(Images.darkHole, 2150, 2195, null);
         
         if (GameSetUp.DEBUGMODE) {
             for (Walls w : caveWalls) {

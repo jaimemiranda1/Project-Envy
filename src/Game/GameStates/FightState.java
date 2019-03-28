@@ -269,6 +269,11 @@ public class FightState extends InWorldState{
 						handler.setArea("None");
 					}
 					else if(prevState.equals("Town")){
+						
+						handler.getGame().getMusicHandler().set_changeMusic("res/music/OverWorld.mp3");
+						handler.getGame().getMusicHandler().play();
+						handler.getGame().getMusicHandler().setVolume(0.2);
+						
 						Player.checkInWorld = true;
 						InWorldState.townArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
 						InWorldState.townArea.oldPlayerYCoord = (int) (handler.getYDisplacement());

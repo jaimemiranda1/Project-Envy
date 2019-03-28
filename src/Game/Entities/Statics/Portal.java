@@ -29,7 +29,7 @@ public class Portal extends BaseStaticEntity {
 	@Override
 	public void render(Graphics g) {
 		if(!Player.isinArea && !TownArea.isInTown)
-		g.drawImage(Images.darkHole, 2150, 2195, width, height, null);
+		g.drawImage(Images.darkHole, (int)(handler.getXInWorldDisplacement() + xPosition),(int)( handler.getYInWorldDisplacement() + yPosition), width, height, null);
 	}
 
 	@Override
