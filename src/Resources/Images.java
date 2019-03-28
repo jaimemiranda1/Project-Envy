@@ -115,7 +115,7 @@ public class Images {
 		map = new BufferedImage[4];
 		Scaledmap = new Image[3];
 
-		battleBackground = new BufferedImage[4];
+		battleBackground = new BufferedImage[5];
 
 		Attack = new BufferedImage[1];
 		Defend = new BufferedImage[1];
@@ -207,6 +207,7 @@ public class Images {
 			battleBackground[1] = ImageIO.read(getClass().getResourceAsStream("/Sheets/forest.jpg"));
 			battleBackground[2] = ImageIO.read(getClass().getResourceAsStream("/PixelEffects/README/SArea.png"));
 			battleBackground[3] = ImageIO.read(getClass().getResourceAsStream("/Sheets/caveBackground.png"));
+			battleBackground[4] = ImageIO.read(getClass().getResourceAsStream("/Sheets/DarkHole.jpg"));
 
 			Attack[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Attack.png"));
 			Defend[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Defend.png"));

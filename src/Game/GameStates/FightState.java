@@ -20,7 +20,6 @@ import Game.Entities.Dynamics.Player;
 import Game.World.InWorldAreas.TownArea;
 import Main.GameSetUp;
 import Main.Handler;
-import Main.Launch;
 import Resources.Animation;
 import Resources.Images;
 
@@ -572,12 +571,15 @@ public class FightState extends InWorldState{
 	//Sets the background according to the previous state
 	private void backgroundSelect(String prev) {
 
-		if(prev.equals("None"))
+		if(prev.equals("None") && !enemy.name.equals("Lord JJ"))
 			background = Images.battleBackground[1];
 		else if(prev.equals("Town")) 
 			background = Images.battleBackground[2];
 		else if (prev.equals("Cave"))
 			background = Images.battleBackground[3];
+		else if(enemy.name.equals("Lord JJ")) {
+			background = Images.battleBackground[4];
+		}
 
 
 	}
