@@ -20,6 +20,7 @@ import Game.Entities.Dynamics.Player;
 import Game.World.InWorldAreas.TownArea;
 import Main.GameSetUp;
 import Main.Handler;
+import Main.Launch;
 import Resources.Animation;
 import Resources.Images;
 
@@ -219,6 +220,22 @@ public class FightState extends InWorldState{
 				g.drawString("DEFEAT!",handler.getWidth()/3 - 50,handler.getHeight()/2);
 
 			}else{
+				if(enemy.name.equals("Lord JJ")) {
+					g.setColor(new Color(255,255,255,alpha+=1));
+					g.fillRect(0,0,handler.getWidth(),handler.getHeight());
+					g2.setColor(Color.GREEN);
+					g.drawString("THE END!",handler.getWidth()/3 - 50,handler.getHeight()/2);
+					g2.setFont(new Font("IMPACT", 3, this.wordHeight/3));
+					g.drawString("Thank you for playing.",handler.getWidth()/3 + 10,handler.getHeight()/2 + 70);
+					
+					if(  alpha == 250) {
+						handler.getGame().reStart();
+						State.setState(handler.getGame().menuState);
+					}
+				
+					
+				}
+				else {
 				g.setColor(new Color(255,255,255,alpha+=1));
 				g.fillRect(0,0,handler.getWidth(),handler.getHeight());
 				g2.setColor(Color.GREEN);
@@ -231,8 +248,9 @@ public class FightState extends InWorldState{
 					g2.setFont(new Font("IMPACT", 3, this.wordHeight/3));
 					g.drawString( handler.getEntityManager().getPlayer().getLvl() + "  -> " + (handler.getEntityManager().getPlayer().getLvl()+1),handler.getWidth()/3 + 150,handler.getHeight()/2 + 230);
 				}
+				}
 
-				if(enemy.name.contentEquals("Jovan")) {//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				if(enemy.name.contentEquals("Jovan")) {
 
 					unlockedSkill = true;
 				}

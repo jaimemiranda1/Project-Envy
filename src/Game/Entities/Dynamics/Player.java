@@ -209,7 +209,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 						PushPlayerBack();
 					}
 
-					if (w.getType().equals("Town")) {//++++++++++++++++++++++++++++++++++
+					if (w.getType().equals("Town")) {
 						checkInWorld = true;
 						InWorldState.townArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
 						InWorldState.townArea.oldPlayerYCoord = (int) (handler.getYDisplacement());
@@ -226,7 +226,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 					else if (w.getType().startsWith("Door")) {
 						canMove = true;
 
-						if (w.getType().equals("Door Cave") && handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {//++++++++++++++++++++++++++++++++++
+						if (w.getType().equals("Door Cave") && handler.getEntityManager().getPlayer().getSkill().equals("Freeze")) {
 							checkInWorld = true;
 							InWorldState.caveArea.oldPlayerXCoord = (int) (handler.getXDisplacement());
 							InWorldState.caveArea.oldPlayerYCoord = (int) (handler.getYDisplacement());
@@ -244,7 +244,7 @@ public class Player extends BaseDynamicEntity implements Fighter {
 							State.setState(handler.getGame().inWorldState.setArea(InWorldState.caveArea));
 						}
 						else {
-							PushPlayerBack();//+++++++++++++++++++++
+							PushPlayerBack();
 						}
 
 						if (w.getType().equals("Door S")) {

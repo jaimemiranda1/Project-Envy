@@ -143,7 +143,7 @@ public class GameSetUp implements Runnable {
         //checks for key types and manages them
         keyManager.tick();
         
-        if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_F7)) {//++++++++++++++++++++++++++++++++++++++++
+        if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_F7)) {
         	DEBUGMODE = !DEBUGMODE;
            if(DEBUGMODE == true) {
         	handler.getEntityManager().getPlayer().setStr(1000);

@@ -44,11 +44,16 @@ public class EnemyOne extends BaseHostileEntity implements Fighter{
 
 
         if(handler.getArea().equals(this.Area)) {
-            if (!Player.checkInWorld) {
+            if (!Player.checkInWorld && !this.name.equals("Lord JJ")) {
                 enemyOne = new Rectangle((int) (handler.getXDisplacement() + getXOffset()),
                         (int) (handler.getYDisplacement() + getYOffset()), 45, 45);
 
-            } else {
+            } 
+            else if(!Player.checkInWorld && this.name.equals("Lord JJ")) {
+                enemyOne = new Rectangle((int) (handler.getXDisplacement() + getXOffset()),
+                        (int) (handler.getYDisplacement() + getYOffset()),70, 100);
+            }
+            else {
                 enemyOne = new Rectangle((int) (handler.getXInWorldDisplacement() + getXOffset()),
                         (int) (handler.getYInWorldDisplacement() + getYOffset()), 70, 70);
 

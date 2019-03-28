@@ -86,7 +86,7 @@ public class WorldManager {
 
 				if (w.getType().equals("Wall"))
 					g2.setColor(Color.black);
-				else if(!FightState.unlockedSkill)//++++++++++++++++++++++++++++++++++++++++++++
+				else if(!FightState.unlockedSkill)
 					g2.setColor(Color.black);
 				else 
 					g2.setColor(Color.PINK);
@@ -157,6 +157,13 @@ public class WorldManager {
 		
 		//Town
 		worldWalls.add(new Walls(handler, 1080, 415, 220, 260, "Town"));
+		
+		//Castle
+		worldWalls.add(new Walls(handler, 2300, 2340, 30, 600, "Wall"));	//left
+		worldWalls.add(new Walls(handler, 2865, 2340, 30, 600, "Wall"));	//right
+		worldWalls.add(new Walls(handler, 2300, 2930, 600, 30, "Wall"));	//bottom
+		worldWalls.add(new Walls(handler, 2300, 2340, 600, 30, "Wall"));	//top
+
 	
 	}
 
